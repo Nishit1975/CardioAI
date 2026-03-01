@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://cardioai-wg15.onrender.com/predict';
+const API_BASE_URL = 'https://cardioai-wg15.onrender.com';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
