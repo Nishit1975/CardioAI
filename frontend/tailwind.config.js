@@ -1,0 +1,87 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        orbitron: ['Orbitron', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        /* legacy aliases so old JSX class names still resolve */
+        syne: ['Orbitron', 'sans-serif'],
+        poppins: ['Inter', 'sans-serif'],
+        'dm-sans': ['Inter', 'sans-serif'],
+        'dm-mono': ['Inter', 'monospace'],
+      },
+      colors: {
+        navy: {
+          950: '#020817',
+          900: '#0a1628',
+          800: '#0f2040',
+          700: '#152848',
+          600: '#1a3155',
+        },
+        cyan: {
+          DEFAULT: '#06b6d4',
+          300: '#67e8f9',
+          400: '#22d3ee',
+          500: '#06b6d4',
+          600: '#0891b2',
+        },
+        electric: {
+          400: '#60a5fa',
+          500: '#3b82f6',
+          600: '#2563eb',
+        },
+        neonGreen: { 400: '#4ade80', 500: '#22c55e', 600: '#16a34a' },
+        neonRed: { 400: '#f87171', 500: '#ef4444', 600: '#dc2626' },
+      },
+      boxShadow: {
+        'glass': '0 8px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(6,182,212,0.10), inset 0 1px 0 rgba(255,255,255,0.04)',
+        'glass-lg': '0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(6,182,212,0.16), inset 0 1px 0 rgba(255,255,255,0.05)',
+        'glass-hover': '0 24px 72px rgba(0,0,0,0.65), 0 0 0 1px rgba(6,182,212,0.26), 0 0 55px rgba(6,182,212,0.09)',
+        'neon-cyan': '0 0 24px rgba(6,182,212,0.55),  0 0 72px rgba(6,182,212,0.22)',
+        'neon-green': '0 0 24px rgba(34,197,94,0.55),  0 0 72px rgba(34,197,94,0.22)',
+        'neon-red': '0 0 24px rgba(239,68,68,0.55),  0 0 72px rgba(239,68,68,0.22)',
+        'neon-blue': '0 0 24px rgba(59,130,246,0.55), 0 0 72px rgba(59,130,246,0.22)',
+        'btn': '0 0 22px rgba(6,182,212,0.42), 0 4px 16px rgba(0,0,0,0.45)',
+        'btn-hover': '0 0 40px rgba(6,182,212,0.72), 0 4px 24px rgba(0,0,0,0.55)',
+        'input-focus': '0 0 0 2px rgba(6,182,212,0.22), 0 0 22px rgba(6,182,212,0.15)',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'cyber-grid':
+          'linear-gradient(rgba(6,182,212,0.04) 1px,transparent 1px), linear-gradient(90deg,rgba(6,182,212,0.04) 1px,transparent 1px)',
+        'btn-grad': 'linear-gradient(135deg,#06b6d4 0%,#3b82f6 60%,#6366f1 100%)',
+        'card-header': 'linear-gradient(180deg,rgba(6,182,212,0.07) 0%,transparent 100%)',
+        'hero-glow': 'radial-gradient(ellipse 80% 55% at 50% 0%,rgba(6,182,212,0.14) 0%,transparent 70%)',
+      },
+      animation: {
+        'fade-up': 'fadeUp 0.65s cubic-bezier(0.22,1,0.36,1) forwards',
+        'fade-in': 'fadeIn 0.5s ease forwards',
+        'float': 'floatY 6s ease-in-out infinite',
+        'pulse-ring': 'pulseRing 2.5s ease-out infinite',
+        'spin-slow': 'spin 10s linear infinite',
+        'border-glow': 'borderGlow 4s ease-in-out infinite',
+        'heart': 'heartBeat 1.4s ease-in-out infinite',
+        'ecg': 'ecgScroll 6s linear infinite',
+        'slide-x': 'slideX 20s linear infinite',
+        'scan': 'scanDown 8s linear infinite',
+        'dot-bounce': 'dotBounce 1.2s ease-in-out infinite',
+      },
+      keyframes: {
+        fadeUp: { from: { opacity: 0, transform: 'translateY(24px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+        fadeIn: { from: { opacity: 0 }, to: { opacity: 1 } },
+        floatY: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } },
+        pulseRing: { '0%': { transform: 'scale(1)', opacity: 0.6 }, '100%': { transform: 'scale(1.7)', opacity: 0 } },
+        borderGlow: { '0%,100%': { boxShadow: '0 0 14px rgba(6,182,212,0.3)' }, '50%': { boxShadow: '0 0 32px rgba(6,182,212,0.7)' } },
+        heartBeat: { '0%,100%': { transform: 'scale(1)' }, '14%': { transform: 'scale(1.18)' }, '28%': { transform: 'scale(1)' }, '42%': { transform: 'scale(1.12)' }, '70%': { transform: 'scale(1)' } },
+        ecgScroll: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+        slideX: { '0%': { transform: 'translateX(0)' }, '100%': { transform: 'translateX(-50%)' } },
+        scanDown: { '0%': { backgroundPosition: '0 -100vh' }, '100%': { backgroundPosition: '0 100vh' } },
+        dotBounce: { '0%,80%,100%': { transform: 'scale(0.6)', opacity: 0.4 }, '40%': { transform: 'scale(1.1)', opacity: 1 } },
+      },
+    },
+  },
+  plugins: [],
+}
